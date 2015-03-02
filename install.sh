@@ -1,12 +1,16 @@
-# Install packages for development
+# # Install packages for development
 apt-get update -y
-apt-get install -y build-essential python python-dev python-setuptools python-pip
+apt-get install -y python3-pip
 
-# install Django 
+# install and setup a virtualenv
+pip3 install virtualenv
+virtualenv /vagrant
+source /vagrant/bin/activate
+cd /vagrant
+
+# install
 pip install Django
-
-# setup alias
-alias python=python3
 
 #cleanup
 apt-get clean
+
