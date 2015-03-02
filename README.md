@@ -11,9 +11,9 @@ Start the virtual machine with vagrant and then ssh into it
 $ vagrant up
 $ vagrant ssh
 ```
-Source your virtual enviorment
+Source your virtual enviorment after sshing into it
 ```sh
-source /vagrant/bin/activate
+$ source /vagrant/bin/activate
 ```
 You are now set up for development.
 
