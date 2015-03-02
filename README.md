@@ -6,6 +6,10 @@ Clone this repository onto your local machine.
 ```sh
 $ git clone https://github.com/SigEpKYBeta/WebApp.git
 ```
+Install the Vagrant Proxy Conf plugin
+```sh
+$ vagrant plugin install vagrant-proxyconf
+```
 Start the virtual machine with vagrant and then ssh into it
 ```sh
 $ vagrant up
