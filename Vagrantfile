@@ -18,7 +18,10 @@ Vagrant.configure(2) do |config|
       config.proxy.https    = "http://10.10.9.100:8080"
       config.proxy.no_proxy = "localhost,127.0.0.1"
   end
-  
+
+  # Forward a port from the guest to the host, which allows for outside	
+  # computers to access the VM, whereas host only networking does not.
+  config.vm.network "forwarded_port", guest: 4567, host: 8000
   # Provision the VM with a shell script
   config.vm.provision :shell, :path => "install.sh"
 end
