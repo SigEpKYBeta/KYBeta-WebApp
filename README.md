@@ -6,7 +6,7 @@ Clone this repository onto your local machine.
 ```sh
 $ git clone https://github.com/SigEpKYBeta/WebApp.git
 ```
-Install the Vagrant Proxy Conf plugin
+Optional: Install the Vagrant Proxy Conf plugin
 ```sh
 $ vagrant plugin install vagrant-proxyconf
 ```
