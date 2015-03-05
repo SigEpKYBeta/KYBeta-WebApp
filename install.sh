@@ -1,6 +1,6 @@
 # # Install packages for development
 apt-get update -y
-apt-get install -y python3-pip curl
+apt-get install -y python3-pip curl git
 
 # install and setup a virtualenv
 pip3 install virtualenv
