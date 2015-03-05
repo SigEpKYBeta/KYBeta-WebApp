@@ -58,12 +58,12 @@ WSGI_APPLICATION = 'SigEp_App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SigEp',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'testdb',
+        'USER': 'admin',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWD': '1111901'
+        'PORT': '',
     }
 }
 
