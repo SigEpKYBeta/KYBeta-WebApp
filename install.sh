@@ -15,6 +15,15 @@ apt-get install -y git > /dev/null
 echo "Installing and setting up PostgreSQL"
 apt-get install -y postgresql postgresql-contrib libpq-dev
 
+cat << EOF | su - postgres -c psql
+-- Create the database user:
+CREATE USER admin WITH PASSWORD 'password';
+
+-- Create the database:
+CREATE DATABASE sigeptest WITH OWNER=admin
+
+EOF
+
 # install and setup a virtualenv
 echo "Installing Python virtualenv"
 pip3 install virtualenv > /dev/null
@@ -27,7 +36,7 @@ cd /vagrant
 echo "Installing Django 1.7 "
 pip install Django > /dev/null
 echo "Installing PostgreSQL connectors"
-pip install psychopg2
+pip install psycopg2
 
 # install node and npm and update
 echo "Installing Node.js and NPM"

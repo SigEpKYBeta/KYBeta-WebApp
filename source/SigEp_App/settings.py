@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'SigEp_App.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'testdb',
+        'NAME': 'sigeptest',
         'USER': 'admin',
         'PASSWORD': 'password',
         'HOST': 'localhost',
