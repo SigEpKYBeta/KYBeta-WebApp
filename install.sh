@@ -39,6 +39,9 @@ npm install npm -g > /dev/null
 echo "Installing bower"
 npm install -g bower > /dev/null
 
+# install SASS
+gem install sass
+
 #cleanup
 echo "Cleaning up"
 apt-get clean > /dev/null
