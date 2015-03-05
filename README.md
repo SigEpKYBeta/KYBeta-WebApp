@@ -6,10 +6,6 @@ Clone this repository onto your local machine.
 ```sh
 $ git clone https://github.com/SigEpKYBeta/WebApp.git
 ```
-Optional: Install the Vagrant Proxy Conf plugin
-```sh
-$ vagrant plugin install vagrant-proxyconf
-```
 Start the virtual machine with vagrant and then ssh into it
 ```sh
 $ vagrant up
@@ -24,8 +20,8 @@ You are now set up for development.
 ### Running the Server
 
 ```sh
-$ cd \vagrant\SigEp_App
-$ python manage.py runserver 0.0.0.0:8000
+$ cd \vagrant\
+$ bash build.sh 
 ```
 With the server still running, you now have access to the server from your browser
 by accessing 127.0.0.1:4567
