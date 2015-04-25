@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-  
+
   # Use the ubuntu 14.04 64-bit OS
   config.vm.box = "ubuntu/trusty64"
 
@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
       config.proxy.no_proxy = "localhost,127.0.0.1"
   end
 
-  # Forward a port from the guest to the host, which allows for outside	
+  # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
   config.vm.network "forwarded_port", guest: 8000, host: 4567
   # Provision the VM with a shell script

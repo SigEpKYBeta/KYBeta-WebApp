@@ -1,7 +1,5 @@
 .vagrant/
-bin/
-include/
-lib/
-*.json
+SigEpDev/
+pip-selfcheck.json
 __pycache__
-db.sqlite3
+bower_components/
