@@ -23,5 +23,5 @@ Vagrant.configure(2) do |config|
   # computers to access the VM, whereas host only networking does not.
   config.vm.network "forwarded_port", guest: 8000, host: 4567
   # Provision the VM with a shell script
-  config.vm.provision :shell, privileged: false, :path => "install.sh"
+  config.vm.provision :shell, :path => "install.sh"
 end
