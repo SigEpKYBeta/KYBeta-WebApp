@@ -1,5 +1,5 @@
 # Sigma Phi Epsilon - KY Beta
-## Web Application
+## Built using Django 1.8 and Materialize CSS
 
 ### Installation
 Clone this repository onto your local machine. 
@@ -11,18 +11,4 @@ Start the virtual machine with vagrant and then ssh into it
 $ vagrant up
 $ vagrant ssh
 ```
-Source your virtual enviorment after sshing into it
-```sh
-$ source /vagrant/bin/activate
-```
-You are now set up for development.
-
-### Running the Server
-
-```sh
-$ cd \vagrant\
-$ bash build.sh 
-```
-With the server still running, you now have access to the server from your browser
-by accessing 127.0.0.1:4567
-
+This will start the server on localhost:4567
