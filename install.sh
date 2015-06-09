@@ -46,8 +46,15 @@ npm install npm -g > /dev/null
 
 apt-get clean > /dev/null
 
-export TEST_ENV_VAR="TestVar"
-echo "export TEST_ENV_VAR=TestVar" >> /home/vagrant/.bashrc
+export STATE="dev"
+export DB_USER="admin"
+export DB_PASS="password"
+export DB_NAME="sigeptest"
+
+echo "export STATE=dev" >> /home/vagrant/.bashrc
+echo "export DB_USER=admin" >> /home/vagrant/.bashrc
+echo "export DB_PASS=password" >> /home/vagrant/.bashrc
+echo "export DB_NAME=sigeptest" >> /home/vagrant/.bashrc
 
 echo "Trying to start server"
 cd source/
