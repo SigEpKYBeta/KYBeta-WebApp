@@ -33,8 +33,8 @@ virtualenv SigEpDev > /dev/null
 source /vagrant/SigEpDev/bin/activate > /dev/null
 
 # install pip packages
-echo "Installing Django 1.7 "
-pip install Django > /dev/null
+echo "Installing Django 1.8.2 "
+pip install Django==1.8.2 > /dev/null
 echo "Installing PostgreSQL connectors"
 pip install psycopg2 > /dev/null
 
@@ -45,6 +45,9 @@ apt-get install -y nodejs > /dev/null
 npm install npm -g > /dev/null
 
 apt-get clean > /dev/null
+
+export TEST_ENV_VAR="TestVar"
+echo "export TEST_ENV_VAR=TestVar" >> /home/vagrant/.bashrc
 
 echo "Trying to start server"
 cd source/
