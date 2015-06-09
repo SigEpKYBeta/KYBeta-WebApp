@@ -46,19 +46,7 @@ npm install npm -g > /dev/null
 
 apt-get clean > /dev/null
 
-# install bower
-echo "Installing bower"
-npm install -g bower > /dev/null
-
-# install SASS
-echo "Installing SASS"
-gem install sass > /dev/null
-
-echo "Installing bower packages"
-bower --allow-root install > /dev/null
-
 echo "Trying to start server"
-
 cd source/
 python manage.py runserver 0.0.0.0:8000 &
 echo "Server running on 0.0.0.0:8000 (Access with localhost:4567)"
