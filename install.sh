@@ -39,24 +39,27 @@ echo "Installing PostgreSQL connectors"
 pip install psycopg2 > /dev/null
 
 # install node and npm and update
-echo "Installing Node.js and NPM"
+echo "Installing Node.js and NPM (Installed just in case you need it)"
 curl -sL https://deb.nodesource.com/setup | sudo bash - > /dev/null
 apt-get install -y nodejs > /dev/null
 npm install npm -g > /dev/null
 
 apt-get clean > /dev/null
 
+echo "Setting enviorment variables"
 export STATE="dev"
 export DB_USER="admin"
 export DB_PASS="password"
 export DB_NAME="sigeptest"
+export SECRET_KEY="test_key"
 
 echo "export STATE=dev" >> /home/vagrant/.bashrc
 echo "export DB_USER=admin" >> /home/vagrant/.bashrc
 echo "export DB_PASS=password" >> /home/vagrant/.bashrc
 echo "export DB_NAME=sigeptest" >> /home/vagrant/.bashrc
+echo "export SECRET_KEY=test_key" >> /home/vagrant/.bashrc
 
-echo "Trying to start server"
+echo "Trying to start server..."
 cd source/
 python manage.py runserver 0.0.0.0:8000 &
 echo "Server running on 0.0.0.0:8000 (Access with localhost:4567)"
