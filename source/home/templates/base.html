@@ -3,31 +3,29 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
   <title>SigEp - KY Beta</title>
 
   <!-- CSS  -->
-  <link href="../../bower_components/materialize/dist/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <body>
   <nav class="grey lighten-2" role="navigation">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo red-text">
-        SigEp
+      <a href="index.html">
+        <img class="brand-logo" style="height:80%;padding-top:1%" src="/static/images/sigep_logo.png" />
       </a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
-        <li><a>Chapter Info</a></li>
         <li><a href="bms.html">Balanced Man Scholarship</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="index.html">Home</a></li>
-        <li><a>Chapter Info</a></li>
         <li><a href="bms.html">Balanced Man Scholarship</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
@@ -35,28 +33,25 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="center">
-
-        </div>
+  {% block content %}
+  {% endblock %}
+  
+  <footer class="page-footer white">
+  <div class="footer-copyright grey lighten-2">
+    <div class="container">
+      <div class="row left black-text">
+        &copy; 2015 Sigma Phi Epsilon KY Beta
+      </div>
+      <div class="row right black-text">
+        Version 1.0.2
       </div>
     </div>
   </div>
-
-  <footer class="page-footer white">
-    <div class="footer-copyright grey lighten-2">
-      <div class="container black-text">
-        &copy; 2015 Sigma Phi Epsilon KY Beta
-      </div>
-    </div>
   </footer>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="../../bower_components/materialize/dist/js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+  <script src="/static/js/init.js"></script>
+</body>
 </html>
