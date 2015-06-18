@@ -21,18 +21,21 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
         <li><a href="bms.html">Balanced Man Scholarship</a></li>
-        <li><a>Contact Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="bms.html">Balanced Man Scholarship</a></li>
-        <li><a>Contact Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
   </nav>
 
+  {% block content %}
+  {% endblock %}
+  
   <footer class="page-footer white">
   <div class="footer-copyright grey lighten-2">
     <div class="container">
@@ -40,7 +43,7 @@
         &copy; 2015 Sigma Phi Epsilon KY Beta
       </div>
       <div class="row right black-text">
-        Version 1.0.1
+        Version 1.0.2
       </div>
     </div>
   </div>
