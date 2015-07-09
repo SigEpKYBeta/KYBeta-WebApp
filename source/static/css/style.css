@@ -1,0 +1,79 @@
+/*
+Custom CSS overrides for the Sigma Phi Epsilon Web Application
+*/
+
+.input-field input[type=text]:focus + label {
+     color: #F44336;
+}
+
+.input-field input[type=password]:focus + label {
+     color: #F44336;
+}
+
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #F44336;
+ box-shadow: 0 1px 0 0 #F44336;
+}
+
+.input-field input[type=password]:focus {
+ border-bottom: 1px solid #F44336;
+ box-shadow: 0 1px 0 0 #F44336;
+}
+
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #F44336;
+ box-shadow: 0 1px 0 0 #F44336;
+}
+
+.input-field input[type=password].valid {
+ border-bottom: 1px solid #F44336;
+ box-shadow: 0 1px 0 0 #F44336;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #000000;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+footer.page-footer {
+  margin: 0;
+}
