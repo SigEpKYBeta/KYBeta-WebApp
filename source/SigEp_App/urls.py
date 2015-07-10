@@ -1,6 +1,5 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from home import views
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^index', 'home.views.index'),
     url(r'^bms', 'home.views.bms'),
     url(r'^contact', 'home.views.contact'),
+    url(r'^register', include('registration.urls'))
 )
