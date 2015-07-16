@@ -27,11 +27,21 @@ class SigEpUser(AbstractBaseUser):
 	USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['first_name', 'last_name']
 
+	class Meta:
+		verbose_name = 'User'
+		verbose_name_plural = 'Users'
+		
 	def get_full_name(self):
 		return self.first_name + " " + self.last_name
 
 	def get_short_name(self):
 		return self.email
+
+	def has_perm(self, perm, obj=None):
+		return True
+
+	def has_module_perms(self, app_label):
+		return True
 
 	def __unicode__(self):
 		return self.email
