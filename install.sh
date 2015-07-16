@@ -61,5 +61,7 @@ echo "export SECRET_KEY=test_key" >> /home/vagrant/.bashrc
 
 echo "Trying to start server..."
 cd source/
+echo "Making database model migrations"
+python manage.py migrate
 python manage.py runserver 0.0.0.0:8000 &
 echo "Server running on 0.0.0.0:8000 (Access with localhost:4567)"
