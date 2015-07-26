@@ -9,6 +9,17 @@ from registration.models import SigEpUser
 class SigEpUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name',)
     list_filter = ('is_staff',)
+    fieldsets = (
+            (None, {'fields': ('email', 'password',)}),
+            ('Personal Info', {'fields': ('first_name', 'last_name',)}),
+            ('Permissions', {'fields': ('is_staff',)}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'first_name', 'last_name'),
+         }),
+    )
     filter_horizontal = ()
     ordering = ('email',)
 
