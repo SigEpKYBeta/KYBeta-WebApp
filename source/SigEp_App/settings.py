@@ -1,6 +1,3 @@
-"""
-Django settings for SigEp_App project.
-"""
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -28,7 +25,6 @@ DATABASES = {
     }
 }
 
-# Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,11 +50,6 @@ ROOT_URLCONF = 'SigEp_App.urls'
 
 WSGI_APPLICATION = 'SigEp_App.wsgi.application'
 
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -80,4 +71,3 @@ STATICFILES_DIRS = (
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'registration.SigEpUser'
-
