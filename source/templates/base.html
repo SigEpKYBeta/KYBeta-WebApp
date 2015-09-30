@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>SigEp - KY Beta</title>
 
   <!-- CSS  -->
@@ -15,19 +16,19 @@
 <body>
   <nav class="grey lighten-2" role="navigation">
     <div class="nav-wrapper container">
-      <a href="index">
+      <a href="{% url 'home.views.index' %}">
         <img class="brand-logo" style="height:80%;padding-top:1%" src="/static/images/sigep_logo.png" />
       </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="index">Home</a></li>
-        <li><a href="bms">Balanced Man Scholarship</a></li>
-        <li><a href="contact">Contact Us</a></li>
+        <li><a href="{% url 'home.views.index' %}">Home</a></li>
+        <li><a href="{% url 'home.views.bms' %}">Balanced Man Scholarship</a></li>
+        <li><a href="{% url 'home.views.contact' %}">Contact Us</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="index">Home</a></li>
-        <li><a href="bms">Balanced Man Scholarship</a></li>
-        <li><a href="contact">Contact Us</a></li>
+        <li><a href="{% url 'home.views.index' %}">Home</a></li>
+        <li><a href="{% url 'home.views.bms' %}">Balanced Man Scholarship</a></li>
+        <li><a href="{% url 'home.views.contact' %}">Contact Us</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
     </div>
@@ -53,5 +54,8 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
   <script src="/static/js/init.js"></script>
+  
+  {% block javascript %}
+  {% endblock %}
 </body>
 </html>
