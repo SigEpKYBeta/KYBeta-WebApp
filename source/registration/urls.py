@@ -3,8 +3,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'SigEp_App.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-    url(r'^$', views.register)
+    url(r'^$', views.register),
+    url(r'^/success/', views.success, name='success'),
 )
