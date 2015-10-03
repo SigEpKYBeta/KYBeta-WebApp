@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-from accounts.models import SigEpUser, SigEpUserManager
-from django.db import IntegrityError
 
+from accounts.models import SigEpUser, SigEpUserManager
 from .forms import RegistrationForm 
 
 def register(request):

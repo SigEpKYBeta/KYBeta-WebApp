@@ -1,4 +1,5 @@
 from django import forms
+from .models import SigEpUser
 
 class RegistrationForm(forms.Form):
 	first_name = forms.CharField(error_messages={'required': 'Please enter your first name.'})
@@ -18,3 +19,13 @@ class RegistrationForm(forms.Form):
 		if password and rennter_password:
 			if password != rennter_password:
 				self.add_error('password', "Your passwords did not match. Try again.")
+		return cleaned_data
+
+	def clean_email(self):
+		data = self.cleaned_data['email']
+
+		if SigEpUser.objects.filter(email=data).exists():
+			self.add_error('email', 'That email is already being used. Try again.')
+		return data
+
+
