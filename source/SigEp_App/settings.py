@@ -33,7 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'registration',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -70,4 +70,4 @@ STATICFILES_DIRS = (
 )
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'registration.SigEpUser'
+AUTH_USER_MODEL = 'accounts.SigEpUser'

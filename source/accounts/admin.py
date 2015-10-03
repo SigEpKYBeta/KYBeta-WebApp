@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from registration.models import SigEpUser
+from accounts.models import SigEpUser
 
 class SigEpUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name',)

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from registration.models import SigEpUser, SigEpUserManager
+from accounts.models import SigEpUser, SigEpUserManager
 from django.db import IntegrityError
 
 from .forms import RegistrationForm 
@@ -10,7 +10,7 @@ def register(request):
         if reg_form.is_valid():
             user = SigEpUser.objects.create_user(request.POST['email'], request.POST['first_name'],
                     request.POST['last_name'], request.POST['password'])
-            return redirect('register/success')
+            return redirect('success')
 
     else:
         reg_form = RegistrationForm()

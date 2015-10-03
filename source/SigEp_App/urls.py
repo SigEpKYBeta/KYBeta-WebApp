@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     url(r'^index', 'home.views.index'),
     url(r'^bms', 'home.views.bms'),
     url(r'^contact', 'home.views.contact'),
-    url(r'^register', include('registration.urls'))
+    url(r'^accounts', include('accounts.urls'))
 )
