@@ -1,6 +1,15 @@
 /*
 Custom CSS overrides for the Sigma Phi Epsilon Web Application
 */
+.site-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1 0 auto;
+}
 
 .input-field input[type=text]:focus + label {
      color: #F44336;
