@@ -9,11 +9,12 @@ def register(request):
         if reg_form.is_valid():
             user = SigEpUser.objects.create_user(request.POST['email'], request.POST['first_name'],
                     request.POST['last_name'], request.POST['password'])
-            return redirect('success')
+            return redirect('success/')
 
     else:
         reg_form = RegistrationForm()
-    return render(request, 'register.html', {'form': reg_form})
+    return render(request, 'accounts/register.html', {'form': reg_form})
 
 def success(request):
-    return render(request, 'success.html')
+    return render(request, 'accounts/success.html')
+
