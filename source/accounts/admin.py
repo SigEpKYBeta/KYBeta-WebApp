@@ -4,9 +4,9 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from accounts.models import SigEpUser
+from accounts.models import User
 
-class SigEpUserAdmin(UserAdmin):
+class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name',)
     list_filter = ('is_staff',)
     fieldsets = (
@@ -23,5 +23,5 @@ class SigEpUserAdmin(UserAdmin):
     filter_horizontal = ()
     ordering = ('email',)
 
-admin.site.register(SigEpUser, SigEpUserAdmin)
+admin.site.register(User, CustomUserAdmin)
 admin.site.unregister(Group)

@@ -70,4 +70,4 @@ STATICFILES_DIRS = (
 )
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'accounts.SigEpUser'
+AUTH_USER_MODEL = 'accounts.User'
