@@ -13,7 +13,7 @@
   <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
-<body>
+<body class="site-body">
   <nav class="grey lighten-2" role="navigation">
     <div class="nav-wrapper container">
       <a href="{% url 'home.views.index' %}">
@@ -23,6 +23,12 @@
         <li><a href="{% url 'home.views.index' %}">Home</a></li>
         <li><a href="{% url 'home.views.bms' %}">Balanced Man Scholarship</a></li>
         <li><a href="{% url 'home.views.contact' %}">Contact Us</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'accounts.views.logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'accounts.views.login' %}">Login</a></li>
+        {% endif %}
+      <li><a>Welcome, {{user.get_username}}</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -34,8 +40,10 @@
     </div>
   </nav>
 
+  <main class="site-content">
   {% block content %}
   {% endblock %}
+  </main>
   
   <footer class="page-footer white">
   <div class="footer-copyright grey lighten-2">
