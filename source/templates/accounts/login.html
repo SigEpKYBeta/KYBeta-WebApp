@@ -5,14 +5,13 @@
     {% if form.errors %}
       <div class="card-panel red lighten-2">
         {% for field in form %}
-          {% if field.errors %}
-            <li class="white-text">{{ field.errors|striptags }}</li>
-          {% endif %}
+          {%for error in field.errors%}
+            <li class="white-text">{{ error|striptags }}</li>
+          {% endfor %}
         {% endfor %}
       </div>
     {% endif %}
   </div>
-
   <form class="col s12" method="post">
     {% csrf_token %}
     <div class="row">
