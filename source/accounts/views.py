@@ -29,7 +29,7 @@ def login(request):
             user = authenticate(username=email, password=password) 
             if user is not None and user.is_active:
                 auth_login(request, user)
-                return render(request, 'accounts/success.html')
+                return redirect('/index')
     else:
         login_form = LoginForm()
     return render(request, 'accounts/login.html', {'form': login_form})
