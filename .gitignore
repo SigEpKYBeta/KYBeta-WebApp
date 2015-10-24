@@ -4,3 +4,5 @@ pip-selfcheck.json
 __pycache__
 bower_components/
 migrations
+.sass-cache/
+*.css.map

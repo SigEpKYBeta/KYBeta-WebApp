@@ -1,102 +1,86 @@
-/*
-Custom CSS overrides for the Sigma Phi Epsilon Web Application
-*/
-.site-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
+p {
+  line-height: 2rem; }
 
-.site-content {
-  flex: 1 0 auto;
-}
-
-.input-field input[type=text]:focus + label {
-     color: #F44336;
-}
-
-.input-field input[type=password]:focus + label {
-     color: #F44336;
-}
-
-.input-field input[type=email]:focus + label {
-     color: #F44336;
-}
-
-.input-field input[type=text]:focus {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
-
-.input-field input[type=password]:focus {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
-
-.input-field input[type=email]:focus {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
-
-.input-field input[type=text].valid {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
-
-.input-field input[type=password].valid {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
-
-.input-field input[type=email].valid {
- border-bottom: 1px solid #F44336;
- box-shadow: 0 1px 0 0 #F44336;
-}
+.nav-btn {
+  margin-right: 15px; }
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
-}
-
-p {
-  line-height: 2rem;
-}
+  color: #444; }
 
 .button-collapse {
-  color: #000000;
-}
+  color: #000000; }
+
+.user-details .row {
+  margin: 0; }
+
+li.user-details.black-text {
+  background-color: inherit; }
+
+.site-body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.site-content {
+  flex: 1 0 auto; }
+
+footer.page-footer {
+  margin: 0; }
 
 .parallax-container {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
-}
+  color: rgba(255, 255, 255, 0.9); }
 
 .parallax-container .section {
-  width: 100%;
-}
+  width: 100%; }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
+    top: 40%; }
 
-@media only screen and (max-width : 600px) {
   #index-banner .section {
-    top: 0;
-  }
-}
-
+    top: 10%; } }
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0; } }
 .icon-block {
-  padding: 0 15px;
-}
+  padding: 0 15px; }
 
-footer.page-footer {
-  margin: 0;
-}
+.input-field input[type=text]:focus + label {
+  color: #F44336; }
+
+.input-field input[type=password]:focus + label {
+  color: #F44336; }
+
+.input-field input[type=email]:focus + label {
+  color: #F44336; }
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+.input-field input[type=email].valid {
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336; }
+
+/*# sourceMappingURL=style.css.map */

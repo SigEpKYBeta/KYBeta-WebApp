@@ -38,6 +38,11 @@ pip install Django==1.8.2 > /dev/null
 echo "Installing PostgreSQL connectors"
 pip install psycopg2 > /dev/null
 
+# install sass
+echo "Installing SASS"
+apt-get install -y ruby > /dev/null
+gem install sass > /dev/null
+
 # install node and npm and update
 echo "Installing Node.js and NPM (Installed just in case you need it)"
 curl -sL https://deb.nodesource.com/setup | sudo bash - > /dev/null
@@ -64,4 +69,5 @@ cd source/
 echo "Making database model migrations"
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000 &
+sass --watch /vagrant/source/static/css/sass/styles.css:/vagrant/source/static/css/style.css &
 echo "Server running on 0.0.0.0:8000 (Access with localhost:4567)"
