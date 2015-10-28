@@ -1,5 +1,6 @@
 .vagrant/
 SigEpDev/
+local_dev/
 pip-selfcheck.json
 __pycache__
 bower_components/
