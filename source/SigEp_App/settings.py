@@ -1,12 +1,14 @@
-"""
-Django settings for SigEp_App project.
-"""
 import os
+import json
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+with open('config.json') as json_file:
+    config = json.load(json_file)
 
 # Check and see what state the machine is in
 # and set the settings to that machine
-if os.environ.get('STATE') == 'dev':
+if config['state'] == 'dev':
     DEBUG = True 
     TEMPLATE_DEBUG = True 
     ALLOWED_HOSTS = []
@@ -15,28 +17,28 @@ else:
     TEMPLATE_DEBUG = False
     ALLOWED_HOSTS = ['127.0.0.1']
     
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = config['secret_key']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': 'localhost',
+        'NAME': config['database_name'],
+        'USER': config['database_user'],
+        'PASSWORD': config['database_password'],
+        'HOST': config['database_host'],
         'PORT': '',
     }
 }
 
-# Application definition
 INSTALLED_APPS = (
-    #'django.contrib.admin',
-    #'django.contrib.auth',
-    #'django.contrib.contenttypes',
-    #'django.contrib.sessions',
-    #'django.contrib.messages',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,11 +55,6 @@ ROOT_URLCONF = 'SigEp_App.urls'
 
 WSGI_APPLICATION = 'SigEp_App.wsgi.application'
 
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.7/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -69,7 +66,16 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'accounts.User'
+
+LOGIN_URL = '/accounts/login/'
