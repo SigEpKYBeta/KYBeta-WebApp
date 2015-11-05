@@ -3,23 +3,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Check and see what state the machine is in
 # and set the settings to that machine
-if os.environ.get('STATE') == 'dev':
-    DEBUG = True 
-    TEMPLATE_DEBUG = True 
-    ALLOWED_HOSTS = []
-else:
-    DEBUG = False
-    TEMPLATE_DEBUG = False
-    ALLOWED_HOSTS = ['127.0.0.1']
+#if os.environ.get('STATE') == 'dev':
+DEBUG = True 
+TEMPLATE_DEBUG = True 
+ALLOWED_HOSTS = []
+#else:
+    #DEBUG = False
+    #TEMPLATE_DEBUG = False
+    #ALLOWED_HOSTS = ['127.0.0.1']
     
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'A SECRET_KEY' #os.environ.get('SECRET_KEY')
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
+        'NAME': 'sigep_dev', #os.environ.get('DB_NAME'),
+        'USER': 'admin', #os.environ.get('DB_USER'),
+        'PASSWORD': 'password', #os.environ.get('DB_PASS'),
         'HOST': 'localhost',
         'PORT': '',
     }

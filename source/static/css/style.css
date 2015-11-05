@@ -1,6 +1,9 @@
 p {
   line-height: 2rem; }
 
+.no-pad {
+  margin-bottom: 0px; }
+
 .nav-btn {
   margin-right: 15px; }
 
@@ -11,11 +14,9 @@ nav .brand-logo {
 .button-collapse {
   color: #000000; }
 
-.user-details .row {
-  margin: 0; }
-
 li.user-details.black-text {
-  background-color: inherit; }
+  background-color: inherit;
+  line-height: 0px; }
 
 .site-body {
   display: flex;

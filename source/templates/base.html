@@ -6,7 +6,11 @@
   <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>SigEp - KY Beta</title>
+  <title>
+  {% block title %}
+  SigEp - KY Beta
+  {% endblock %}
+  </title>
 
   <!-- CSS  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
@@ -22,22 +26,23 @@
             </a>
         <ul id="slide-out" class="side-nav">
           {% if user.is_authenticated %}
-            <li class="user-details black-text">
+            <li class="user-details black-text center">
               <div class="row">
-                <div class="col s2 m2 l2">
+                <div class="col s12">
                   <i class="medium material-icons">perm_identity</i>
-                </div>
-                <div class="col s10 m10 l10">
-                  <a class="dropdown-button btn-flat" data-activates="user-dropdown">Sheldon Burks</a>
+                  <h5>{{ user.get_full_name }}</h5>
                 </div>
               </div>
             </li>
-          {% else %}
-            <li><a href="{% url 'accounts.views.login' %}">Login</a></li>
           {% endif %}
           <li><a href="{% url 'home.views.index' %}">Home</a></li>
           <li><a href="{% url 'home.views.bms' %}">Balanced Man Scholarship</a></li>
           <li><a href="{% url 'home.views.contact' %}">Contact Us</a></li>
+          {% if not user.is_authenticated %}
+            <li><a href="{% url 'accounts.views.login'%}">Login</a></li>
+          {% else %}
+            <li><a href="{% url 'accounts.views.logout'%}">Logout</a></li>
+          {% endif %}
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
       </nav>
@@ -64,7 +69,7 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
   <script src="/static/js/init.js"></script>
   
   {% block javascript %}
