@@ -1,26 +1,31 @@
 import os
+import json
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+with open('config.json') as json_file:
+    config = json.load(json_file)
 
 # Check and see what state the machine is in
 # and set the settings to that machine
-#if os.environ.get('STATE') == 'dev':
-DEBUG = True 
-TEMPLATE_DEBUG = True 
-ALLOWED_HOSTS = []
-#else:
-    #DEBUG = False
-    #TEMPLATE_DEBUG = False
-    #ALLOWED_HOSTS = ['127.0.0.1']
+if config['state'] == 'dev':
+    DEBUG = True 
+    TEMPLATE_DEBUG = True 
+    ALLOWED_HOSTS = []
+else:
+    DEBUG = False
+    TEMPLATE_DEBUG = False
+    ALLOWED_HOSTS = ['127.0.0.1']
     
-SECRET_KEY = 'A SECRET_KEY' #os.environ.get('SECRET_KEY')
+SECRET_KEY = config['secret_key']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sigep_dev', #os.environ.get('DB_NAME'),
-        'USER': 'admin', #os.environ.get('DB_USER'),
-        'PASSWORD': 'password', #os.environ.get('DB_PASS'),
-        'HOST': 'localhost',
+        'NAME': config['database_name'],
+        'USER': config['database_user'],
+        'PASSWORD': config['database_password'],
+        'HOST': config['database_host'],
         'PORT': '',
     }
 }
