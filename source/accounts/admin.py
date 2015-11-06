@@ -1,18 +1,19 @@
-from django import forms
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 from accounts.models import User
 
+
 class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'first_name', 'last_name',)
-    list_filter = ('is_staff',)
+    list_filter = ('is_superuser',)
     fieldsets = (
             (None, {'fields': ('email', 'password',)}),
-            ('Personal Info', {'fields': ('first_name', 'last_name',)}),
-            ('Permissions', {'fields': ('is_staff',)}),
+            ('Personal Info', {'fields': ('first_name',
+                                          'last_name',
+                                          'is_brother')}),
+            ('Permissions', {'fields': ('is_superuser',)}),
     )
     add_fieldsets = (
         (None, {
