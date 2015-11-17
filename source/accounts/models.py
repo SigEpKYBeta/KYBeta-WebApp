@@ -23,7 +23,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True, null=False)
-    is_brother = models.BooleanField(default=False)
 
     objects = UserManager()
 
@@ -50,7 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def is_staff(self):
         return self.is_superuser
 
-    def __unicode__(self):
-        return self.email
+    def __str__(self):
+        return self.get_full_name()
 
 

@@ -1,5 +1,4 @@
 from django.contrib import admin
-from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 
 from accounts.models import User
@@ -11,9 +10,8 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
             (None, {'fields': ('email', 'password',)}),
             ('Personal Info', {'fields': ('first_name',
-                                          'last_name',
-                                          'is_brother')}),
-            ('Permissions', {'fields': ('is_superuser',)}),
+                                          'last_name',)}),
+            ('Permissions', {'fields': ('is_superuser', 'groups',)}),
     )
     add_fieldsets = (
         (None, {
@@ -21,8 +19,7 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('email', 'first_name', 'last_name'),
          }),
     )
-    filter_horizontal = ()
+    filter_horizontal = (['groups'])
     ordering = ('email',)
 
 admin.site.register(User, CustomUserAdmin)
-admin.site.unregister(Group)
