@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+  <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>
   {% block title %}
@@ -13,8 +14,8 @@
   </title>
 
   <!-- CSS  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <body class="site-body">
@@ -22,7 +23,7 @@
     <div class="navbar-fixed">
       <nav class="grey lighten-2">
             <a href="{% url 'home.views.index' %}">
-              <img class="brand-logo center" style="height:80%;padding-top:1%" src="/static/images/sigep_logo.png" />
+              <img class="brand-logo center" style="height:80%;padding-top:1%" src="{% static "images/sigep_logo.png" %}" />
             </a>
         <ul id="slide-out" class="side-nav">
           {% if user.is_authenticated %}
@@ -38,12 +39,21 @@
           <li><a href="{% url 'home.views.index' %}">Home</a></li>
           <ul class="collapsible collapsible-accordian">
             <li>
+              <a class="collapsible-header">Members</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="#">Fines</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="collapsible collapsible-accordian">
+            <li>
               <a class="collapsible-header">About Us</a>
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="#">First</a></li>
-                  <li><a href="#">Second</a></li>
-                  <li><a href="#">Third</a></li>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Why Join SigEp?</a></li>
                 </ul>
               </div>
             </li>
@@ -81,8 +91,8 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-  <script src="/static/js/init.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <script src="{% static "js/init.js" %}"></script>
   
   {% block javascript %}
   {% endblock %}
