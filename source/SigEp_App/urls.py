@@ -7,4 +7,5 @@ urlpatterns = patterns('',
     url(r'^index/', 'home.views.index'),
     url(r'^bms/', 'home.views.bms'),
     url(r'^contact/', 'home.views.contact'),
+    url(r'^accounts/', include('accounts.urls')),
 )
