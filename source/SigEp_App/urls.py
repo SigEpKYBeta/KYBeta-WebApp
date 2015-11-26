@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^bms/', 'home.views.bms'),
     url(r'^contact/', 'home.views.contact'),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^fines/', include('fines.urls'))
 )
