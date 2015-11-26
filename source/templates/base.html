@@ -29,7 +29,7 @@
         <ul id="slide-out" class="side-nav">
           <li><a href="{% url 'home.views.index' %}">Home</a></li>
           {% if user.is_brother %}
-            <li><a href="#">Members Area</a></li>
+            <li><a href="{% url 'member_home.views.placeholder' %}">Members Area</a></li>
           {% endif %}
           <ul class="collapsible collapsible-accordian">
             <li>
