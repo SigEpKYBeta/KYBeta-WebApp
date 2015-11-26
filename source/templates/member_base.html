@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+<ul id="slide-out" class="side-nav">
+  {% if user.is_authenticated %}
+    <li class="user-details black-text center">
+      <div class="row">
+        <div class="col s12">
+          <a href="#"><i class="medium material-icons">perm_identity</i></a>
+          <h5>{{ user.get_full_name }}</h5>
+        </div>
+      </div>
+    </li>
+  {% endif %}
+  <li><a href="{% url 'home.views.index' %}">Home</a></li>
+  <ul class="collapsible collapsible-accordian">
+    <li>
+      <a class="collapsible-header">Fines</a>
+      <div class="collapsible-body">
+        <ul>
+          <li><a href="#">Manage Fines</a></li>
+          <li><a href="#">View Your Fines</a></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <a class="collapsible-header">Point System</a>
+      <div class="collapsible-body">
+        <ul>
+          <li><a href="#">Manage Points</a></li>
+          <li><a href="#">View Standings</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  {% if not user.is_authenticated %}
+    <li><a href="{% url 'accounts.views.login'%}">Login</a></li>
+  {% else %}
+    <li><a href="{% url 'accounts.views.logout'%}">Logout</a></li>
+  {% endif %}
+</ul>
+{% endblock %}
+
+<main class="site-content">
+{% block content %}
+{% endblock %}
+</main>

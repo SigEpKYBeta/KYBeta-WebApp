@@ -49,6 +49,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     def is_staff(self):
         return self.is_superuser
 
+    @property
+    def is_brother(self):
+        return self.groups.filter(name='Active Brother').exists()
+
     def __str__(self):
         return self.get_full_name()
 
