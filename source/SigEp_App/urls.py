@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 urlpatterns = patterns('',
+    url(r'^member/', include('member_home.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'home.views.index'),
     url(r'^index/', 'home.views.index'),
