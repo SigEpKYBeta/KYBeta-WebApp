@@ -7,4 +7,5 @@ bower_components/
 migrations
 .sass-cache/
 *.css.map
+style.css
 config.json
