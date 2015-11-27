@@ -18,8 +18,8 @@
       <a class="collapsible-header">Fines</a>
       <div class="collapsible-body">
         <ul>
-          <li><a href="#">Manage Fines</a></li>
-          <li><a href="#">View Your Fines</a></li>
+          <li><a href="{% url 'fines.views.manage_fines' %}">Manage Fines</a></li>
+          <li><a href="{% url 'fines.views.manage_user_fines' id=user.id %}">View Your Fines</a></li>
         </ul>
       </div>
     </li>

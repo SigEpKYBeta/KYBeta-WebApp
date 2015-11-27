@@ -14,6 +14,12 @@ def manage_fines(request):
                 .order_by('user__last_name')
     return render(request, 'fines/manager.html', {'fines': fines})
 
+
+def manage_user_fines(request, id):
+    fines = Fine.objects.filter(user=id)
+    return render(request, 'fines/user_manager.html', {'fines': fines})
+
+
 def add_fine(request):
     if request.method == 'POST':
         fine_form = FineForm(request.POST)

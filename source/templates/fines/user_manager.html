@@ -1,0 +1,33 @@
+{% extends 'member_base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <table class="bordered highlight">
+      <thead>
+        <tr>
+          <th></th>        
+          <th data-field="first_name">Fine Reason</th>
+          <th data-field="total_fines">Fine</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for fine in fines %}
+          <tr>
+            <td>
+              <input type="checkbox" id="{{ fine.id }}" />
+              <label for="{{ fine.id }}"></label>
+            </td>
+            <td>{{ fine.reason }}</td>            
+            <td>${{fine.amount}}</td>            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <a class="btn red">Pay Fines</a>
+  </div>
+</div>
+{% endblock %}
