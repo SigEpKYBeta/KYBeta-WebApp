@@ -1,0 +1,31 @@
+{% extends 'member_base.html' %}
+
+{% block content %}
+<div class="container">
+  <br />
+  <div class="row">
+    <a class="btn red" href="{% url 'fines.views.add_fine' %}">Add Fine</a>
+  </div>
+  <div class="row">
+    <table class="bordered highlight">
+      <thead>
+        <tr>
+          <th data-field="last_name">Last Name</th>
+          <th data-field="first_name">First Name</th>
+          <th data-field="total_fines">Total Fines</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for fine in fines %}
+          <tr>
+            <td>{{ fine.user__last_name }}</td>            
+            <td>{{ fine.user__first_name }}</td>            
+            <td>${{fine.total}}</td>            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
