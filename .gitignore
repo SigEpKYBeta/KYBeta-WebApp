@@ -8,3 +8,4 @@ migrations
 .sass-cache/
 *.css.map
 config.json
+node_modules/
