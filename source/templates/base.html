@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -22,9 +23,9 @@
   <header>
     <div class="navbar-fixed">
       <nav class="grey lighten-2">
-            <a href="{% url 'home.views.index' %}">
-              <img class="brand-logo center" style="height:80%;padding-top:1%" src="{% static "images/sigep_logo.png" %}" />
-            </a>
+        <a href="{% url 'home.views.index' %}">
+          <img class="brand-logo center" style="height:80%;padding-top:1%" src="{% static "images/sigep_logo.png" %}" />
+        </a>
         {% block sidebar %}
         <ul id="slide-out" class="side-nav">
           <li><a href="{% url 'home.views.index' %}">Home</a></li>

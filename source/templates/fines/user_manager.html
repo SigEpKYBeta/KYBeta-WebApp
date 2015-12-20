@@ -1,9 +1,11 @@
 {% extends 'member_base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
 <div class="container">
   <div class="row">
-    <table class="bordered highlight">
+    <table class="bordered highlight" id="fineTable">
       <thead>
         <tr>
           <th></th>        
@@ -20,14 +22,19 @@
               <label for="{{ fine.id }}"></label>
             </td>
             <td>{{ fine.reason }}</td>            
-            <td>${{fine.amount}}</td>            
+            <td>${{ fine.amount }}</td>            
           </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
   <div class="row">
-    <a class="btn red">Pay Fines</a>
+    <a class="btn red" id="payFineButton">Pay Fines</a>
   </div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="{% static "fines/js/payments.js" %}"></script>
 {% endblock %}

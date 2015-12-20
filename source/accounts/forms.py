@@ -35,7 +35,7 @@ class RegistrationForm(forms.Form):
 
         if User.objects.filter(email=email).exists():
             self.add_error('email', 'That email is already being used. Try again.')
-        return email 
+        return email
 
 
 class LoginForm(forms.Form):
