@@ -1,0 +1,13 @@
+{
+  "name": "sigep-kybeta-webapp",
+  "version": "1.0.0",
+  "description": "Web Application for SigEp KY Beta",
+  "scripts": {
+    "run": "gulp runserver"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://SheldonB@github.com/SheldonB/SigEp-WebApp.git"
+  },
+  "author": "Sheldon Burks"
+}
