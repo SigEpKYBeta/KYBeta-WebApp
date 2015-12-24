@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Web Application for SigEp KY Beta",
   "scripts": {
-    "run": "gulp runserver"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "git+https://SheldonB@github.com/SheldonB/SigEp-WebApp.git"
   },
-  "author": "Sheldon Burks"
+  "author": "Sheldon Burks",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
 }

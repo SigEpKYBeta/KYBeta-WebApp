@@ -10,11 +10,11 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./source/static/css'));
 });
 
-gulp.task('sass:watch', function() {
-  gulp.watch('./source/static/sass/styles.scss', ['sass']);
+gulp.task('runserver', function() {
+  var cmd = '. ./SigEpEnv/bin/activate';
+  var proc = exec(cmd + ' && python source/manage.py runserver');
 });
 
-gulp.task('runserver', function() {
-  var cmd = '. ../Python_Virtual_Env/SigEp/bin/activate';
-  var proc = exec(cmd + ' && python source/manage.py runserver');
+gulp.task('default', function() {
+    gulp.watch('./source/static/sass/*.scss', ['sass']);
 });
