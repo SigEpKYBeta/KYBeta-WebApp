@@ -26,6 +26,13 @@
           </tr>
         {% endfor %}
       </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><div id="total">$0.00</div></td>
+        </tr>
+      </tfoot>
     </table>
   </div>
   <div class="row">
@@ -36,5 +43,5 @@
 
 {% block javascript %}
 <script src="https://checkout.stripe.com/checkout.js"></script>
-<script src="{% static "fines/js/payments.js" %}"></script>
+<script src="{% static "fines/js/userManager.js" %}"></script>
 {% endblock %}

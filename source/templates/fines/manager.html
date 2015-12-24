@@ -1,5 +1,7 @@
 {% extends 'member_base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
 <div class="container">
   <br />
@@ -18,7 +20,7 @@
 
       <tbody>
         {% for fine in fines %}
-          <tr>
+          <tr id="{{ fine.user__id }}">
             <td>{{ fine.user__last_name }}</td>            
             <td>{{ fine.user__first_name }}</td>            
             <td>${{fine.total}}</td>            
@@ -28,4 +30,8 @@
     </table>
   </div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static "fines/js/manager.js" %}"></script>
 {% endblock %}
