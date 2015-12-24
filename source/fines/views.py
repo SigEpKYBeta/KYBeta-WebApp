@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.db.models import Sum
 
 from accounts.models import User
 
@@ -8,10 +7,7 @@ from .models import Fine
 
 
 def manage_fines(request):
-    fines = Fine.objects \
-                .values('user__id', 'user__first_name', 'user__last_name') \
-                .annotate(total=Sum('amount')) \
-                .order_by('user__last_name')
+    fines = Fine.objects.unpaid_fines()
     return render(request, 'fines/manager.html', {'fines': fines})
 
 
@@ -29,7 +25,8 @@ def add_fine(request):
             reason = request.POST['reason']
             for user_id in users:
                 user = User.objects.get(id=user_id)
-                fine = Fine(user=user, amount=amount, reason=reason)
+                fine = Fine(user=user, amount=amount,
+                            status='UNPAID', reason=reason)
                 fine.save()
     else:
         fine_form = FineForm()
