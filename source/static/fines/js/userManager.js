@@ -1,7 +1,7 @@
 function totalSelectedFines() {
-    var total = 0;
+    var selectedFines = [];
     $('#fineTable tr').find('input[type="checkbox"]:checked').each(function(index, row) {
-        console.log(row)
+        selectedFines.push(row.id);
     });
 }
 
