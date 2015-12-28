@@ -13,14 +13,15 @@ class FineModelTestCase(TestCase):
                     first_name='Test',
                     last_name='Case',
                     password='123456')
+
         Fine.objects.create(
             user=user,
             amount=20,
             status='UNPAID',
             reason='This is a test fine')
 
-    def test_fine_creation(self):
-        user = User.objects.get(email='test_email@gmail.com')
-        test_fine = Fine.objects.get(user=user)
-        
-        self.assertEqual(test_fine.amount, 20)
+        Fine.objects.create(
+            user=user,
+            amount=30,
+            status='UNPAID',
+            reason='This is a test fine')
