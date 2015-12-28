@@ -2,6 +2,7 @@
 
 {% load staticfiles %}
 
+
 {% block content %}
 <div class="container">
   <div class="row">
@@ -18,7 +19,7 @@
         {% for fine in fines %}
           <tr>
             <td>
-              <input type="checkbox" id="{{ fine.id }}" />
+              <input type="checkbox" id="{{ fine.id }}" data-amount="{{ fine.amount }}" />
               <label for="{{ fine.id }}"></label>
             </td>
             <td>{{ fine.reason }}</td>            
@@ -30,12 +31,13 @@
         <tr>
           <td></td>
           <td></td>
-          <td><div id="total">$0.00</div></td>
+          <td><div id="total">$0</div></td>
         </tr>
       </tfoot>
     </table>
   </div>
   <div class="row">
+    {% csrf_token %}
     <a class="btn red" id="payFineButton">Pay Fines</a>
   </div>
 </div>
