@@ -8,4 +8,4 @@ migrations
 *.css.map
 config.json
 node_modules/
-style.css
+styles.css
