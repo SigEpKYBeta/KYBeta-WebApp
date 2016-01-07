@@ -11,3 +11,7 @@ def bms(request):
 
 def contact(request):
     return render(request, 'home/contact.html')
+
+
+def coming_soon(request):
+    return render(request, 'home/coming_soon.html')
