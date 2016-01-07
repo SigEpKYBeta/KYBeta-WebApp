@@ -9,14 +9,14 @@ with open('config.json') as json_file:
 # Check and see what state the machine is in
 # and set the settings to that machine
 if config['state'] == 'dev':
-    DEBUG = True 
-    TEMPLATE_DEBUG = True 
+    DEBUG = True
+    TEMPLATE_DEBUG = True
     ALLOWED_HOSTS = []
 else:
     DEBUG = False
     TEMPLATE_DEBUG = False
     ALLOWED_HOSTS = ['127.0.0.1']
-    
+
 SECRET_KEY = config['secret_key']
 
 DATABASES = {
@@ -37,8 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'home',
     'accounts',
+    'fines',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,6 +1,5 @@
 .vagrant/
-SigEpDev/
-local_dev/
+SigEpEnv/
 pip-selfcheck.json
 __pycache__
 bower_components/
@@ -8,3 +7,4 @@ migrations
 .sass-cache/
 *.css.map
 config.json
+node_modules/
