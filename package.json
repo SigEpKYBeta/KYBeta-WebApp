@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Web Application for SigEp KY Beta",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp sass"
   },
   "repository": {
     "type": "git",
