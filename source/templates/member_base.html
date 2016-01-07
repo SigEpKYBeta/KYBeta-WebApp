@@ -18,17 +18,10 @@
       <a class="collapsible-header">Fines</a>
       <div class="collapsible-body">
         <ul>
-          <li><a href="#">Manage Fines</a></li>
-          <li><a href="#">View Your Fines</a></li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <a class="collapsible-header">Point System</a>
-      <div class="collapsible-body">
-        <ul>
-          <li><a href="#">Manage Points</a></li>
-          <li><a href="#">View Standings</a></li>
+          {% if perms.fines.add_fine %}
+            <li><a href="{% url 'fines.views.manage_fines' %}">Manage Fines</a></li>
+          {% endif %}
+          <li><a href="{% url 'fines.views.manage_user_fines' id=user.id %}">View Your Fines</a></li>
         </ul>
       </div>
     </li>

@@ -1,0 +1,57 @@
+{% extends 'member_base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% if fines|length == 0 %}
+      <div class="center">
+        <h3>You currently have no active fines</h3>
+      </div>
+    {% else %}
+      <table class="bordered highlight" id="fineTable">
+        <thead>
+          <tr>
+            <th></th>        
+            <th data-field="first_name">Fine Reason</th>
+            <th data-field="total_fines">Fine</th>
+          </tr>
+        </thead>
+
+
+        <tbody>
+          {% for fine in fines %}
+            <tr>
+              <td>
+                <input type="checkbox" id="{{ fine.id }}" data-amount="{{ fine.amount }}" />
+                <label for="{{ fine.id }}"></label>
+              </td>
+              <td>{{ fine.reason }}</td>            
+              <td>${{ fine.amount }}</td>            
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><div id="total">$0</div></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="row">
+      {% csrf_token %}
+      <a class="btn red" id="payFineButton">Pay Fines</a>
+    </div>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="{% static "fines/js/userManager.js" %}"></script>
+{% endblock %}

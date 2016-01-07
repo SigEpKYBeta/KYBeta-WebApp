@@ -42,12 +42,13 @@ footer.page-footer {
   .parallax-container .section {
     position: absolute;
     top: 40%; }
-
   #index-banner .section {
     top: 10%; } }
+
 @media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0; } }
+
 .icon-block {
   padding: 0 15px; }
 
@@ -106,11 +107,12 @@ footer.page-footer {
   border-bottom: 1px solid #F44336;
   box-shadow: 0 1px 0 0 #F44336; }
 
+.input-field .prefix.active {
+  color: #F44336; }
+
 .dropdown-content li > span {
   color: #000000; }
 
 [type="checkbox"]:checked + label:before {
   border-right-color: #F44336;
   border-bottom-color: #F44336; }
-
-/*# sourceMappingURL=style.css.map */

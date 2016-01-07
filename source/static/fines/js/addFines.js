@@ -8,9 +8,10 @@ $(function() {
     };
 
     $('#id_amount').blur(function() {
-        var amountVal = parseInt($('#id_amount').val());
+        var amountVal = parseFloat($('#id_amount').val());
         $('#id_amount').val(amountVal.toFixed(2));
     });
+    
     addSelectUsers();
     initSelectDropdown();
 });
