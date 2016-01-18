@@ -15,8 +15,9 @@
         <thead>
           <tr>
             <th></th>        
-            <th data-field="first_name">Fine Reason</th>
-            <th data-field="total_fines">Fine</th>
+            <th data-field="fine_reason">Fine Reason</th>
+            <th data-field="create_dt">Date Fined</th>
+            <th data-field="fine_amount">Fine</th>
           </tr>
         </thead>
 
@@ -29,12 +30,14 @@
                 <label for="{{ fine.id }}"></label>
               </td>
               <td>{{ fine.reason }}</td>            
+              <td>{{ fine.created }}</td>            
               <td>${{ fine.amount }}</td>            
             </tr>
           {% endfor %}
         </tbody>
         <tfoot>
           <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td><div id="total">$0</div></td>
