@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 from accounts.models import User
 
 
@@ -35,8 +37,14 @@ class Fine(models.Model):
     amount = models.FloatField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
     reason = models.TextField()
+    created = models.DateTimeField(editable=False)
 
     objects = FinesManager()
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.created = timezone.now()
+        return super(Fine, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.user.get_full_name() \
